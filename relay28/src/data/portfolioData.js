@@ -9,7 +9,6 @@ export const personalInfo = {
   title: "FullStack Developer | Infomration Technolgy Student",
   tagline: "Building innovative solutions with modern technologies",
   email: "radzduque@gmail.com",
-  phone: "+1 (123) 456-7890",
   location: "Cebu, Philippines",
   
   // Social Links
@@ -24,20 +23,23 @@ export const personalInfo = {
     and continue growing as a developer.`,
     
     // Image: Place your photo in the public folder and reference it here
-    image: "/profile-placeholder.jpg",
+    image: "/profile-placeholder.JPG",
     
     // Skills with proficiency (0-100)
     skills: [
+      { name: "Java/Springboot" , level: 95 },
       { name: "JavaScript/React", level: 85 },
       { name: "HTML/CSS", level: 90 },
       { name: "Node.js", level: 75 },
-      { name: "Python", level: 80 },
+      { name: "C", level: 80},
+      { name: "ServiceNow", level: 80},
+      { name: "Python/Django", level: 80 },
       { name: "Git/GitHub", level: 85 },
       { name: "UI/UX Design", level: 70 },
     ],
     
     // Additional interests or technologies you're learning
-    interests: ["Web Development", "Machine Learning", "Open Source", "UI/UX Design"]
+    interests: ["Web Development", "Machine Learning", "Open Source", "Networking","CyberSecurity","Cloud Computing"]
   },
   
   // Resume download link
@@ -55,31 +57,31 @@ export const projects = [
     description: "A interactive language learning platform designed to enhance vocabulary, grammar, and communication skills through role-based gameplay and comprehensive progress tracking.",
     longDescription: ".",
     image: "/projects/WOMS.png", // Place images in public/projects folder
-    tags: ["React", "Springboot", "MySQL", "Java", "Python","Gemini AI"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://wordmaster-nu.vercel.app/login",
+    tags: ["React", "Springboot", "MySQL", "Java", "Python",,"Javascript","Gemini AI"],
+    demoLink: "https://wordmaster-nu.vercel.app/login",
+    githubLink: "https://github.com/Relay28/Wordmaster",
     featured: true, // Set to true for projects you want to highlight
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Memoire",
     description: "A responsive task management application with drag-and-drop functionality and real-time updates.",
-    longDescription: "Developed a productivity tool that helps users organize their tasks efficiently. Features include drag-and-drop task organization, priority levels, due dates, and collaborative features.",
-    image: "/projects/taskapp.jpg",
-    tags: ["React", "Firebase", "Material-UI", "React Beautiful DnD"],
-    demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/project",
+    longDescription: "",
+    image: "/projects/mmrlogo.png",
+    tags: ["React", "Springboot", "MySQL", "Java", "Tailwind CSS","Kotlin","Javascript"],
+    demoLink: "https://it-342-memoire.vercel.app",
+    githubLink: "https://github.com/Relay28/IT342-Memoire",
     featured: true,
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "A modern weather application with real-time data visualization and 7-day forecast.",
-    longDescription: "Created a weather dashboard that provides current weather conditions, hourly forecasts, and weekly predictions using OpenWeather API. Features include location search, favorites, and responsive charts.",
-    image: "/projects/weather.jpg",
-    tags: ["React", "API Integration", "Chart.js", "CSS3"],
+    title: "NoteCraft",
+    description: "A modern note taking and sharing app for better note organizing, joined with task management features and messaging for seamless collaboration.",
+    longDescription: ".",
+    image: "/projects/notecraft.png",
+    tags: ["React", "Springboot", "Java", "Javascript"],
     demoLink: "https://demo-link.com",
-    githubLink: "https://github.com/yourusername/project",
+    githubLink: "https://github.com/relay28/NoteCraft",
     featured: false,
   },
   // Add more projects as needed
@@ -136,20 +138,29 @@ export const achievements = [
     organization: "Information Technology Professionals Examination Council (ITPEC)",
     date: "November 2025",
     description: "One of 51 passers.Successfully passed the FE exam, demonstrating proficiency in fundamental IT concepts and practices.",
-    icon: "trophy", // trophy, award, certificate, star
+    icon: "certificate", // trophy, award, certificate, star
     link: "https://certificate-link.com"
   },
-  {
+   {
     id: 2,
-    title: "TOPCIT - Level 3 Certified",
-    organization: "Institute of Information & Communications Technology Planning & Evaluation (IITP)",
-    date: "July 2025",
-    description: "Earned AWS Cloud Practitioner certification demonstrating knowledge of cloud concepts and AWS services.",
+     title: "ServiceNow Service Portal Micro-Certification",
+    organization: "ServiceNow",
+    date: "November 2025",
+    description: "Earned the ServiceNow Service Portal Micro-Certification, demonstrating proficiency in building and managing ServiceNow portals.",
     icon: "certificate",
-    link: "https://certificate-link.com"
+    link: "https://drive.google.com/file/d/1YnmefggJjxg3kk8VJYwRJdpDG-VrxbvF/view?usp=sharing"
   },
   {
     id: 3,
+    title: "TOPCIT - Level 3 Certified",
+    organization: "Institute of Information & Communications Technology Planning & Evaluation (IITP)",
+    date: "July 2025",
+    description: "Earned TOPCIT Level 3 certification, demonstrating advanced proficiency in IT skills and knowledge.",
+    icon: "certificate",
+    link: "https://drive.google.com/file/d/1j9nDFVgEXvkDLAWcgDNOOdsIfQMvHMNR/view?usp=drive_link"
+  },
+  {
+    id: 4,
     title: "Top 7 in BS Information Technology - 3rd Year",
     organization: "University Name",
     date: "September 2025",
@@ -158,8 +169,8 @@ export const achievements = [
     link: null
   },
   {
-    id: 4,
-     title: "Top 7 in BS Information Technology - 2rd Year",
+    id: 5,
+     title: "Top 7 in BS Information Technology - 2nd Year",
     organization: "University Name",
     date: "September 2024",
     description: "Ranked Top 7 among peers in the BS Information Technology program for outstanding academic performance",
@@ -175,21 +186,28 @@ export const achievements = [
 export const education = [
   {
     id: 1,
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University Name",
-    location: "City, Country",
-    duration: "2021 - 2025 (Expected)",
-    gpa: "3.8/4.0",
+    degree: "Bachelor of Science in Information Technology",
+    institution: "Cebu Institute of Technology - University",
+    location: "Cebu City, Philippines",
+    duration: "2022 - 2026 (Expected)",
+    gpa: "4.5",
     relevantCourses: [
       "Data Structures & Algorithms",
       "Web Development",
       "Database Systems",
       "Software Engineering",
-      "Computer Networks"
+      "System Administration",
+      "CyberSecurity",
+      "ServiceNow",
+      "AWS",
+      "Mobile Development",
+      "Networking",
+      "Data Analytics"
     ],
     achievements: [
-      "Dean's List (3 semesters)",
-      "CS Department Scholarship Recipient"
+      "Consistent Dean's Lister",
+      "Top 7 in BSIT (2nd Year)",
+      "Top 7 in BSIT (3nd Year)"
     ]
   },
   // Add more education entries if needed
@@ -201,19 +219,18 @@ export const education = [
 export const contactInfo = {
   title: "Let's Connect",
   subtitle: "I'm currently seeking opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
-  email: "your.email@example.com",
-  phone: "+1 (123) 456-7890",
+  email: "radzduque@gmail.com",
   
   // Social links with display names
   socialLinks: [
     {
       name: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/relay28",
       icon: "github"
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://linkedin.com/in/raeduqs",
       icon: "linkedin"
     },
     {
@@ -223,7 +240,7 @@ export const contactInfo = {
     },
     {
       name: "Email",
-      url: "mailto:your.email@example.com",
+      url: "mailto:radzduque@gmail.com",
       icon: "email"
     }
   ],

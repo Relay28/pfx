@@ -41,15 +41,9 @@ const About = () => {
               </div>
               <div className="profile-decoration" />
             </motion.div>
-
-            <div className="profile-info">
-              <h3>{personalInfo.name}</h3>
-              <p className="profile-title">{personalInfo.title}</p>
-              <p className="profile-location">{personalInfo.location}</p>
-            </div>
           </motion.div>
 
-          {/* Description and Skills */}
+          {/* Description */}
           <motion.div
             className="about-details"
             initial={{ opacity: 0, x: 60 }}
@@ -60,24 +54,9 @@ const About = () => {
               <p>{personalInfo.aboutMe.description}</p>
             </div>
 
-            {/* Skills */}
-            <div className="skills-section">
-              <h3 className="skills-title">Technical Skills</h3>
-              <div className="skills-grid">
-                {personalInfo.aboutMe.skills.map((skill, index) => (
-                  <SkillBar
-                    key={skill.name}
-                    skill={skill}
-                    index={index}
-                    inView={inView}
-                  />
-                ))}
-              </div>
-            </div>
-
             {/* Interests */}
             <div className="interests-section">
-              <h3 className="interests-title">Interests & Learning</h3>
+              <h4 className="interests-title">Interests & Learning</h4>
               <div className="interests-tags">
                 {personalInfo.aboutMe.interests.map((interest, index) => (
                   <motion.span
@@ -112,29 +91,6 @@ const About = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
-
-const SkillBar = ({ skill, index, inView }) => {
-  return (
-    <div className="skill-item">
-      <div className="skill-header">
-        <span className="skill-name">{skill.name}</span>
-        <span className="skill-level">{skill.level}%</span>
-      </div>
-      <div className="skill-bar-container">
-        <motion.div
-          className="skill-bar-fill"
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-          transition={{ 
-            duration: 1.2, 
-            delay: index * 0.15, 
-            ease: [0.22, 1, 0.36, 1]
-          }}
-        />
-      </div>
-    </div>
   );
 };
 

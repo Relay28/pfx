@@ -16,7 +16,7 @@ function App() {
         <main className="main-content">
           <Hero />
           <Projects />
-          <Experience />
+          {/* <Experience /> */}
           <Achievements />
           <About />
           <Contact />

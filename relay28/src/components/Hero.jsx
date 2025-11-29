@@ -1,26 +1,34 @@
 import { motion } from 'framer-motion';
 import { HiArrowDown } from 'react-icons/hi2';
-import { HiOutlineArrowDown } from 'react-icons/hi';
-import { FaGithub, FaLinkedin, FaTwitter, FaDownload } from 'react-icons/fa';
+import { FaDownload } from 'react-icons/fa';
 import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
 
 const Hero = () => {
-  const handleScrollToProjects = () => {
-    const projectsSection = document.querySelector('#projects');
-    if (projectsSection) {
-      const offset = 80;
-      const elementPosition = projectsSection.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+  const handleScrollToSection = (e, sectionId) => {
+    if (e) e.preventDefault();
+    const section = document.querySelector(sectionId);
+    if (section) {
+      const headerHeight = 80;
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({ 
+        top: offsetPosition, 
+        behavior: 'smooth' 
+      });
     }
   };
 
-  const getSocialIcon = (url) => {
-    if (url.includes('github')) return <FaGithub />;
-    if (url.includes('linkedin')) return <FaLinkedin />;
-    if (url.includes('twitter')) return <FaTwitter />;
-    return null;
+  const handleDownloadCV = (e) => {
+    e.preventDefault();
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Path to your resume in the public folder
+    link.download = 'Resume.pdf'; // Name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -76,7 +84,7 @@ const Hero = () => {
           >
             <motion.button
               className="cta-button primary"
-              onClick={handleScrollToProjects}
+              onClick={(e) => handleScrollToSection(e, '#projects')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -84,42 +92,35 @@ const Hero = () => {
               <HiArrowDown className="button-icon" />
             </motion.button>
 
-            <motion.a
-              href={personalInfo.resumeLink}
+            <motion.button
               className="cta-button secondary"
-              download
+              onClick={(e) => handleScrollToSection(e, '#contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Download CV
-              <FaDownload className="button-icon" />
-            </motion.a>
+              Get In Touch
+            </motion.button>
           </motion.div>
 
           <motion.div
-            className="hero-social"
+            className="hero-links"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6 }}
           >
-            {[personalInfo.github, personalInfo.linkedin, personalInfo.twitter]
-              .filter(Boolean)
-              .map((url, index) => (
-                <motion.a
-                  key={url}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                  whileHover={{ scale: 1.2, y: -3 }}
-                  whileTap={{ scale: 0.9 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.2 + index * 0.1 }}
-                >
-                  {getSocialIcon(url)}
-                </motion.a>
-              ))}
+            <button
+              className="text-link"
+              onClick={(e) => handleScrollToSection(e, '#about')}
+            >
+              About Me
+            </button>
+            <span className="link-separator">•</span>
+            <button
+              className="text-link"
+              onClick={handleDownloadCV}
+            >
+              Download CV
+            </button>
           </motion.div>
         </motion.div>
 
@@ -165,11 +166,14 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.button
         className="scroll-indicator"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.6 }}
+        onClick={(e) => handleScrollToSection(e, '#projects')}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         <motion.div
           className="scroll-arrow"
@@ -182,7 +186,7 @@ const Hero = () => {
         >
           <HiArrowDown />
         </motion.div>
-      </motion.div>
+      </motion.button>
     </section>
   );
 };

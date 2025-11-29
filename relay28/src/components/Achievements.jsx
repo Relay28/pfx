@@ -93,8 +93,8 @@ const AchievementCard = ({ achievement, variants, getIcon }) => {
       className="achievement-card"
       variants={variants}
       ref={ref}
-      whileHover={{ y: -12, scale: 1.03 }}
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
       <motion.div
         className={`achievement-icon icon-${achievement.icon}`}

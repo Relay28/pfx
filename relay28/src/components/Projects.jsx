@@ -78,8 +78,8 @@ const ProjectCard = ({ project, variants }) => {
       className={`project-card ${project.featured ? 'featured' : ''}`}
       variants={variants}
       ref={ref}
-      whileHover={{ y: -15, scale: 1.02 }}
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -8, scale: 1.01 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
       {project.featured && <span className="featured-badge">Featured</span>}
       
